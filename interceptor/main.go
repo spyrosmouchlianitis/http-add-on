@@ -251,7 +251,9 @@ func runProxyServer(
 	})
 	go probeHandler.Start(ctx)
 
-	tlsCfg := tls.Config{}
+	tlsCfg := tls.Config{
+		InsecureSkipVerify: true,
+	}
 	if tlsEnabled {
 		caCert, err := os.ReadFile(tlsConfig["certificatePath"])
 		if err != nil {

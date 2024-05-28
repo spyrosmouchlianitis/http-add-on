@@ -3,7 +3,7 @@
 ##################################################
 SHELL           = /bin/bash
 
-IMAGE_REGISTRY 	?= ghcr.io
+IMAGE_REGISTRY 	?= vpuat.azurecr.io
 IMAGE_REPO     	?= kedacore
 VERSION 		?= main
 

@@ -47,7 +47,7 @@ func (uh *Upstream) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		req.URL.RawQuery = r.URL.RawQuery
 		// delete the incoming X-Forwarded-For header so the proxy
 		// puts its own in. This is also important to prevent IP spoofing
-		req.Header.Del("X-Forwarded-For ")
+		req.Header.Del("X-Forwarded-For")
 	}
 	proxy.ErrorHandler = func(w http.ResponseWriter, r *http.Request, err error) {
 		sh := NewStatic(http.StatusBadGateway, err)
